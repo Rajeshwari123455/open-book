@@ -1,0 +1,29 @@
+from sympy import *
+
+A = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+
+# Basis of row space
+row_space = Matrix(A.rowspace())
+
+# Basis of column space
+col_space = Matrix([A.columnspace()])
+
+# Print the basis of row space and column space
+print('Basis of row space are:')
+print(row_space)
+print('Basis of column space are:')
+print(col_space)
+
+# Dimension of Row Space = Dimension of Column Space = Rank of A
+print('Dimension of Row Space = Dimension of Column Space =', A.rank())
+
+# Basis for Nullspace
+NSpace = A.nullspace()
+
+# Print the basis for Nullspace
+print('The basis for Nullspace is:')
+for vector in NSpace:
+    print(vector)
+
+# Dimension of Null Space
+print('Dimension of Null Space =', len(NSpace))
